@@ -1,4 +1,4 @@
-import { IconButton } from "@chakra-ui/react"
+import { IconButton, Box, Text } from "@chakra-ui/react"
 import { FaShoppingCart } from 'react-icons/fa'
 
 type CartProps = {
@@ -7,15 +7,26 @@ type CartProps = {
 }
 
 const Cart = (props: CartProps) => {
-  return <>
+  return <Box position='relative'>
     <IconButton
-      colorScheme='orange'
+      variant='iconButton'
       aria-label='Shopping cart'
       isRound
       icon={<FaShoppingCart />}
     />
-    <span>5</span>
-  </>
+    <Box
+      position='absolute'
+      bg='red'
+      borderRadius='4px'
+      width='15px'
+      display='flex'
+      justifyContent='center'
+      top='-5px'
+      right='-3px'
+    >
+      <Text fontSize='xs' color='white'>5</Text>
+    </Box>
+  </Box>
 }
 
 export default Cart

@@ -17,20 +17,21 @@ export default extendTheme({
     body: 'Quicksand'
   },
   colors: {
-    brand: {
-      orange: '#F9A109',
-      lightOrange: '#FFF0DE',
-      bordeau: '#80485B',
-      lightBlue: '##56CCF2',
-      red: '##EB5757',
-      lightGray: '#C1C1C4',
-      darkGrey: '#828282', 
-    }
+    orange: '#F9A109',
+    lightOrange: '#FFF0DE',
+    bordeau: '#80485B',
+    lightBlue: '#56CCF2',
+    red: '#EB5757',
+    lightGray: '#C1C1C4',
+    darkGrey: '#828282',
   },
   components: {
-    IconButton: {
-      baseStyle: {
-        bg: '#F9A109'
+    Button: {
+      variants: {
+        iconButton: {
+          bg: 'orange',
+          color: 'white'
+        }
       }
     }
   }

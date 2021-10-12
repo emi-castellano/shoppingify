@@ -10,9 +10,9 @@ type MenuItemProps = {
 }
 
 const ICON_MAP: any = {
-  items: <FaListUl />,
-  history: <FaHistory />,
-  statistics: <FaChartLine />
+  items: <FaListUl fontSize='18px' />,
+  history: <FaHistory fontSize='18px' />,
+  statistics: <FaChartLine fontSize='18px' />
 }
 
 const MenuItem = (props: MenuItemProps) => {

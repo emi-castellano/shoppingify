@@ -17,7 +17,7 @@ const Header: React.FC = props => {
           <MenuItem itemName='statistics' isActive={false} />
         </Stack>
       </Box>
-      <Box>
+      <Box display='flex' justifyContent='center'>
         <Cart cartItems='5' />
       </Box>
     </Stack>
