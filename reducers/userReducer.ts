@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
 const initialState = {
   id: '',
   fullName: '',
@@ -19,7 +20,10 @@ export const userSlice = createSlice({
       state.email = email
     },
     removeUserAfterLogout: state => {
-      state = initialState
+      state.id = ''
+      state.fullName = ''
+      state.profileThumbnail = ''
+      state.email = ''
     }
   },
 })

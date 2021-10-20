@@ -1,8 +1,9 @@
-import { Stack, Box, Text } from "@chakra-ui/react"
+import { Stack, Box } from "@chakra-ui/react"
 import Image from 'next/image'
 import logo from '../../public/logo.svg'
 import MenuItem from './MenuItem'
 import Cart from '../Cart/Cart'
+import ProfileBubble from '../ProfileBubble/ProfileBubble'
 
 const Header: React.FC = props => {
   return (
@@ -17,8 +18,9 @@ const Header: React.FC = props => {
           <MenuItem itemName='statistics' isActive={false} />
         </Stack>
       </Box>
-      <Box display='flex' justifyContent='center'>
+      <Box display='flex' justifyContent='center' alignItems='center' flexDirection='column'>
         <Cart cartItems='5' />
+        <ProfileBubble />
       </Box>
     </Stack>
   )

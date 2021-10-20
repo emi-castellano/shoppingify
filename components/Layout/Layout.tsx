@@ -1,12 +1,23 @@
 import Header from '../Header/Header'
-import { Flex, Spacer, Center, Box, Text } from "@chakra-ui/react"
+import Head from 'next/head'
+import { Flex, Box } from "@chakra-ui/react"
+import Sidebar from '../Sidebar/Sidebar'
 
-const Layout: React.FC = ({ children }) => {
+type LayoutProps = {
+  children: React.ReactChildren[],
+  pageTitle: string
+}
+
+const Layout = (props: LayoutProps) => {
   return (
     <Flex height='100%'>
+      <Head>
+        <title>{props.pageTitle}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Header />
-      <main >{children}</main>
-      <span>Sidebar</span>
+      <Box as='main' w='80%'>{props.children}</Box>
+      <Sidebar />
     </Flex>
   )
 }

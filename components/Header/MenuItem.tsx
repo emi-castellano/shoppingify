@@ -1,12 +1,9 @@
-import { Stack } from "@chakra-ui/layout"
-import classnames from 'classnames'
+import { Stack, Box, Tooltip } from "@chakra-ui/react"
 import { FaListUl, FaHistory, FaChartLine } from 'react-icons/fa'
-import styles from './header.module.scss'
 
 type MenuItemProps = {
   isActive: boolean,
-  itemName: string,
-  children?: JSX.Element
+  itemName: string
 }
 
 const ICON_MAP: any = {
@@ -16,12 +13,13 @@ const ICON_MAP: any = {
 }
 
 const MenuItem = (props: MenuItemProps) => {
-  const className = classnames(styles['bar'], { [styles.active]: props.isActive })
   const icon = ICON_MAP[props.itemName]
   
-  return <Stack className={styles['menu-item']} flexDirection='row' justifyContent='center' alignItems='center' >
-    <div className={className} />
-    {icon}
+  return <Stack flexDirection='row' justifyContent='center' alignItems='center' h='45px' position='relative' cursor='pointer'>
+    <Box w='6px' h='100%' bg={props.isActive ? 'orange' : 'white'} position='absolute' left='0' borderTopRightRadius='4' borderBottomRightRadius='4' />
+    <Tooltip label={props.itemName} placement='right-end'>
+      {icon}
+    </Tooltip>
   </Stack>
 }
 

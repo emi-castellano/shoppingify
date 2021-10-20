@@ -11,7 +11,7 @@ import supabaseLogo from '../public/supabase.svg'
 import type { NextPage } from 'next'
 
 const Auth: NextPage = () => {
-  const { user, session } = SupabaseAuth.useUser()
+  const { user } = SupabaseAuth.useUser()
   const [authView, setAuthView] = useState('sign_in')
   const dispatch = useDispatch()
   const router = useRouter()
