@@ -18,7 +18,6 @@ const Home: NextPage = () => {
   return <Layout title='Products'>
     <ProductsGrid />
   </Layout>
-
 }
 
 export default Home
